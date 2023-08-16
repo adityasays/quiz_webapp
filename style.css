@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Rowdies:wght@700&family=Teko:wght@500&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -9,14 +12,18 @@ body{
     justify-content: center;
 }
 .qsurface{
-    padding-top: 2vh;
+    padding-top: 0vh;
     height: 70vh;
+    border-radius: 20px;
     width: 70vb;
     background-color: blueviolet;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-between
+     border-width:2px;
+     border-style:solid;
+     border-color:black;
 
 }
 .btn{
@@ -28,14 +35,34 @@ body{
     gap: 40px;
     justify-content: center;
     align-items: center;
-    margin-top: 5vh;
+    margin-top: 3vh;
+}
+.ques h3{
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Teko', sans-serif;
+font-weight: lighter;
+
 }
 .options{
     margin-top: 10vh;
     margin-bottom: 10vh;
 }
 .head{
-    margin-top: 15px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-color: rgb(0, 0, 0);
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+
+    background-color: bisque;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.head h1{
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Rowdies', cursive;
+font-family: 'Teko', sans-serif;
 }
 .btn{
     width: 20vb;
