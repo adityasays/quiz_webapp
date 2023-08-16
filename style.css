@@ -11,9 +11,18 @@ body{
     align-items: center;
     justify-content: center;
 }
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 2px;
+    align-items: center;
+}
 .qsurface{
+    position:relative;
     padding-top: 0vh;
-    height: 70vh;
+    max-height: 70vh;
     border-radius: 20px;
     width: 70vb;
     background-color: blueviolet;
@@ -24,17 +33,25 @@ body{
      border-width:2px;
      border-style:solid;
      border-color:black;
+     
 
+}
+.btndiv{
+    margin-bottom: 2vh;
 }
 .btn{
     margin-bottom: 20px;
 }
 .content{
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 40px;
     justify-content: center;
     align-items: center;
+    margin-top: 3vh;
+}
+.ques{
     margin-top: 3vh;
 }
 .ques h3{
@@ -43,9 +60,16 @@ font-family: 'Teko', sans-serif;
 font-weight: lighter;
 
 }
+.option{
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+}
 .options{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    max-height: 50%;
+    width: 95%;
 }
 .head{
     border-top-right-radius: 20px;
