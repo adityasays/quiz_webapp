@@ -2,6 +2,7 @@ let ques = document.querySelector(".questxt");
 let btn = document.querySelector(".btn");
 let btntext = document.querySelector(".btntxt");
 let options = document.querySelectorAll(".option");
+let content=document.querySelector(".content")
 const questions = [
     {
         question: "What is the full form of HTML",
@@ -37,41 +38,56 @@ function showques() {
     let currentquestion = questions[questionnumber];
     let quesno = questionnumber + 1;
     ques.innerText = quesno + ". " + currentquestion.question;
-    
 
-    currentquestion.answers.forEach((ans, index) => {
-        let cbtn = options[index];
-        cbtn.innerHTML = ans.text;
-        if (ans.text) {
-            
-            cbtn.dataset.correct=ans.correct;
-            
-        }
+    options.forEach((cbtn, index) => {
+        cbtn.innerHTML = currentquestion.answers[index].text;
+        cbtn.dataset.correct = currentquestion.answers[index].correct;
+        cbtn.classList.remove("correct", "incorrect");
+        cbtn.disabled = false;
+        cbtn.removeEventListener("click", checkans);
         cbtn.addEventListener("click", checkans);
     });
+}
+
+function nextbutton() {
+    questionnumber += 1;
+    showques();
+    
+}
+function showresult()
+{
+    content.innerHTML = "<h3 class='fin'>Your Final score is </h3>" + score + "<h3 class='fin'> out of </h3>" + questions.length;
+    btntext.innerText = "Replay";
+    btn.removeEventListener("click", nextbutton); // Removing the nextbutton listener
+    btn.addEventListener("click", startq);
 }
 
 function checkans(e) {
     const selectedbtn = e.target;
     btn.style.display = "block";
-    const iscorrect = selectedbtn.dataset.correct == "true";
+    const iscorrect = selectedbtn.dataset.correct === "true";
 
     if (iscorrect) {
+        score+=1;
         selectedbtn.classList.add("correct");
     } else {
         selectedbtn.classList.add("incorrect");
     }
 
     options.forEach(button => {
-        if (button.dataset.correct == "true") {
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
         button.disabled = true;
     });
 }
 
-
-
+btn.addEventListener("click", () => {
+    if (questionnumber < questions.length ) {
+        nextbutton();
+    } else {
+        showresult()
+    }
+});
 
 startq();
-showques();
