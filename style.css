@@ -75,9 +75,12 @@ font-weight: lighter;
 font-size: larger;
 transition: all 0.3s;
 }
-.option:hover{
+.option:hover:not([disabled]){
     background: #222;
     color: #fff;
+}
+.option:disabled{
+    cursor: no-drop;
 }
 .options{
     margin-top: 3vh;
@@ -108,7 +111,7 @@ font-family: 'Teko', sans-serif;
     transition: all 0.2s;
     border-radius: 10px;
      cursor: pointer;
-     display: none;
+     display:none;
 }
 .btntxt{
     font-size: larger;
@@ -118,4 +121,11 @@ font-family: 'Teko', sans-serif;
            background: #222;
            color: #fff;
 
+}
+.correct{
+    background: greenyellow;
+    color: blueviolet;
+}
+.incorrect{
+    background: rgb(255, 58, 58)
 }
