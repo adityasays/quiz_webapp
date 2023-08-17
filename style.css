@@ -8,7 +8,10 @@
     padding: 0px;
 }
 body{
-    background-color: #00ffff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;r;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,8 +24,8 @@ body{
     gap: 2px;
     align-items: center;
 }
-.qsurface{
-    position:relative;
+.qsurface {
+    position: relative;
     padding-top: 0vh;
     max-height: 70vh;
     border-radius: 20px;
@@ -31,10 +34,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-between;
-    border-width:2px;
-    border-style:solid;
-    border-color:black;
+    justify-content: space-between;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 14px, rgba(0, 0, 0, 0.3) 0px 14px 23px -6px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .btndiv{
     margin-bottom: 2vh;
@@ -113,6 +117,18 @@ body{
     cursor: pointer;
     display: none;
 }
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .btntxt{
     font-size: larger;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
